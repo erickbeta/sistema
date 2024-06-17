@@ -10,7 +10,6 @@ Lista de Libros
 </br>
 <div class="container">
     
-
 <div class="card">
     <div class="card-header">
         <a
@@ -42,27 +41,27 @@ Lista de Libros
                 </thead>
                 
                 <tbody>
-                    {% for Libro in libros %}
+                    {% for libro in libros %}
                     <tr class="">
-                        <td scope="row">{{Libro.id}}</td>
-                        <td>{{Libro.titulo}}</td>
-                        <td><img src="{{Libro.imagen.url}}" height="100" width="100" alt=""></td>   
-                        <td>{{Libro.descripcion}}</td>
+                        <td scope="row">{{libro.id}}</td>
+                        <td>{{libro.titulo}}</td>
+                        <td><img src="{{libro.imagen.url}}" height="100" width="100" alt=""></td>   
+                        <td>{{libro.descripcion}}</td>
 
                         <td>
                         <a
                         name=""
                         id=""
                         class="btn btn-info"
-                        href="{% url "editar" %}"
+                        href="{% url 'editar' %}"
                         role="button"
                         >Editar</a>
                          | 
                          <a
-                         name=""
+                         name="eliminar"
                          id=""
                          class="btn btn-danger"
-                         href="#"
+                         href="{% url 'eliminar' libro.id %}"
                          role="button"
                          >Eliminar</a>
                         </td>
